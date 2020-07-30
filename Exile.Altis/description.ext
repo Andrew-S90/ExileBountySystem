@@ -90,3 +90,8 @@ class CfgRemoteExec
 		jip = 0;
     };
 };
+
+class RscTitles 
+{
+	#include "custom\BountySystem\Countdown.hpp"
+};

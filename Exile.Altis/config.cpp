@@ -9,6 +9,106 @@
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
  */
  
+ 
+class CfgNetworkMessages
+{
+	class startBountyKing
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"OBJECT"
+		};
+	};
+
+	class bountyKingKilled
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"STRING",
+			"STRING"
+		};
+	};
+
+	class bountyKingSurvived
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"STRING",
+			"STRING"
+		};
+	};
+
+	class bountyKingStart
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"SCALAR"
+		};
+	};
+
+	class startBounty
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"OBJECT"
+		};
+	};
+
+	class bountyStart
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"OBJECT",
+			"SCALAR",
+			"SCALAR"
+		};
+	};
+
+	class bountyStartTarget 
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"OBJECT",
+			"SCALAR",
+			"SCALAR"
+		};
+	};
+
+	class failBounty
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"SCALAR"
+		};
+	};
+
+	class targetFailBounty
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"SCALAR"
+		};
+	};
+
+	class bountyBaguetteRequest
+	{
+		module="gui";
+		parameters[]=
+		{
+			"STRING",
+			"STRING"
+		};
+	};
+};	
 
 class CfgClans
 {
@@ -3372,6 +3472,9 @@ class CfgExileCustomCode
 
 		ExileClient_util_fusRoDah = "myaddon\myfunction.sqf";
 	*/
+	
+	//bounties
+	ExileServer_util_getFragPerks = "customcode\server\ExileServer_util_getFragPerks.sqf";
 };
 class CfgExileEnvironment
 {
