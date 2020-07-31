@@ -102,11 +102,7 @@ if !(ExileClientBountyWatch isEqualTo -1) then
 	{
 		ExileClientBountyWatch = -1;
 	};
-	if (_early) then
-	{
-		
-	}
-	else
+	if !(_early) then
 	{
 		["failBounty", [3]] call ExileClient_system_network_send;
 	};
