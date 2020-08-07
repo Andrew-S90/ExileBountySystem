@@ -18,6 +18,7 @@ try
 	};
 	
 	_kingTime = getNumber(configFile >> "BountySettings" >> "King" >> "time");
+	_bountyMaxHeight = getNumber(configFile >> "BountySettings" >> "King" >> "maxHeight");
 	_playerObject setVariable ["ExileBountyTrader", 30, true];
 	_playerObject setVariable ["ExileBountyTerritory", 30, true];
 	_playerObject setVariable ["ExileBountyHeight", 30, true];
@@ -29,7 +30,7 @@ try
 	_marker setMarkerText "Bounty King";
 	
 	//[_sessionID, "toastRequest", ["SuccessTitleAndText", ["BountyKing", format["Let the hunt begin! Survive for %1 minutes.", _kingTime]]]] call ExileServer_system_network_send_to;
-	[_sessionID, "bountyKingStart", [_kingTime]] call ExileServer_system_network_send_to;
+	[_sessionID, "bountyKingStart", [_kingTime,_bountyMaxHeight]] call ExileServer_system_network_send_to;
 	//different response... starts client side timer
 	//server watch timer
 	//["baguetteRequest", ["New Bounty King appeared!"]] call ExileServer_system_network_send_broadcast;

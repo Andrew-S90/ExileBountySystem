@@ -9,7 +9,7 @@ ExileClientBountyFlip = false;
 
 ["SuccessTitleAndText", ["BountyKing", format["Let the hunt begin! Survive for %1 minutes.", _kingTime]]] call ExileClient_gui_toaster_addTemplateToast;
 
-if !(ExileClientBountyKingWatch isEqualTo -1) then
+if (ExileClientBountyKingWatch isEqualTo -1) then
 {
 	ExileClientBountyKingWatch = [2, ExileClient_system_bounty_thread_bountyKingWatch, [_bountyMaxHeight], true] call ExileClient_system_thread_addtask;
 };

@@ -1,5 +1,5 @@
 
-_bountyMaxHeight = _this;
+_bountyMaxHeight = _this select 0;
 
 if (player getVariable ["ExileBountyKing",false]) then
 {

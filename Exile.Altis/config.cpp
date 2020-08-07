@@ -46,6 +46,7 @@ class CfgNetworkMessages
 		module="system_bounty";
 		parameters[]=
 		{
+			"SCALAR",
 			"SCALAR"
 		};
 	};
@@ -56,6 +57,15 @@ class CfgNetworkMessages
 		parameters[]=
 		{
 			"BOOL"
+		};
+	};
+	
+	class failBountyKing
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"SCALAR"
 		};
 	};
 

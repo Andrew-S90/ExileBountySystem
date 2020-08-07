@@ -14,7 +14,7 @@ ExileClientBountyMarker = createMarkerLocal [format["markername%1",_player], get
 ExileClientBountyMarker setMarkerTypeLocal "select";
 ExileClientBountyMarker setMarkerColorLocal "ColorRed";
 
-if !(ExileClientBountyWatch isEqualTo -1) then
+if (ExileClientBountyWatch isEqualTo -1) then
 {
 	ExileClientBountyWatch = [2, ExileClient_system_bounty_thread_bountyWatch, [_player,_bountyMaxHeight], true] call ExileClient_system_thread_addtask;
 };
