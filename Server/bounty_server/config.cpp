@@ -36,7 +36,7 @@ class BountySettings
 	{
 		enabled = 1;
 		
-		time = 10; //minutes
+		time = 1; //minutes
 		
 		respect = 10000; //if popbonus is on then payout becomes 10,000 respect * 50 (player pop) * 1 (bonus) = 500,000 respect to killer
 		
@@ -68,9 +68,9 @@ class BountySettings
 	
 	class Bounty
 	{
-		enabled = 0;
+		enabled = 1;
 		
-		time = 6; //minutes
+		time = 1; //minutes
 		
 		respect = 5000; //if popbonus is on then payout becomes 10,000 respect * 50 (player pop) * 1 (bonus) = 500,000 respect to killer
 		

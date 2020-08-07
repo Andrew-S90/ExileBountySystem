@@ -9,6 +9,6 @@ ExileBountyFlop = 0;
 
 
 //[300, ExileServer_system_bounty_loop, [], true] call ExileServer_system_thread_addtask;
-[300, ExileServer_system_bounty_loop, [], true] call ExileServer_system_thread_addtask;
+[10, ExileServer_system_bounty_loop, [], true] call ExileServer_system_thread_addtask;
 
 diag_log "Bounty Server Initialization completed";
