@@ -4448,6 +4448,38 @@ class CfgInteractionMenus
 			};
 		};
 	};
+	
+	class Bounty
+	{
+		targetType = 2;
+		target = "Land_PortableWeatherStation_01_white_F";
+
+		class Actions 
+		{			
+			class Start: ExileAbstractAction
+			{
+				title = "Start Bounty Mission";
+				condition = "_this call ExileClient_bounty_showCondition";
+				action = "_this call ExileClient_bounty_startMission";
+			};
+		};
+	};
+	
+	class BountyKing
+	{
+		targetType = 2;
+		target = "Land_PortableWeatherStation_01_olive_F";
+
+		class Actions 
+		{			
+			class Start: ExileAbstractAction
+			{
+				title = "Start Bounty King Mission";
+				condition = "_this call ExileClient_bountyKing_showCondition";
+				action = "_this call ExileClient_bountyKing_startMission";
+			};
+		};
+	};
 };
 /**
  * Classname is used for reference

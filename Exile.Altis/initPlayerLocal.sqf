@@ -25,16 +25,12 @@ ExileClientBountyKingWatch = -1;
 }
 forEach
 [
+	['ExileClient_bounty_showCondition', 'custom\BountySystem\ExileClient_bounty_showCondition.sqf'],
+	['ExileClient_bounty_startMission', 'custom\BountySystem\ExileClient_bounty_startMission.sqf'],
+	['ExileClient_bountyKing_showCondition', 'custom\BountySystem\ExileClient_bountyKing_showCondition.sqf'],
+	['ExileClient_bountyKing_startMission', 'custom\BountySystem\ExileClient_bountyKing_startMission.sqf'],
 	['ExileClient_gui_bounty_baguette_show', 'custom\BountySystem\ExileClient_gui_bounty_baguette_show.sqf'],
 	['ExileClient_gui_network_bountyBaguetteRequest', 'custom\BountySystem\ExileClient_gui_network_bountyBaguetteRequest.sqf'],
-	['ExileClient_holdAction_bounty_completed', 'custom\BountySystem\ExileClient_holdAction_bounty_completed.sqf'],
-	['ExileClient_holdAction_bounty_progressCode', 'custom\BountySystem\ExileClient_holdAction_bounty_progressCode.sqf'],
-	['ExileClient_holdAction_bounty_progressCondition', 'custom\BountySystem\ExileClient_holdAction_bounty_progressCondition.sqf'],
-	['ExileClient_holdAction_bounty_showCondition', 'custom\BountySystem\ExileClient_holdAction_bounty_showCondition.sqf'],
-	['ExileClient_holdAction_bountyKing_completed', 'custom\BountySystem\ExileClient_holdAction_bountyKing_completed.sqf'],
-	['ExileClient_holdAction_bountyKing_progressCode', 'custom\BountySystem\ExileClient_holdAction_bountyKing_progressCode.sqf'],
-	['ExileClient_holdAction_bountyKing_progressCondition', 'custom\BountySystem\ExileClient_holdAction_bountyKing_progressCondition.sqf'],
-	['ExileClient_holdAction_bountyKing_showCondition', 'custom\BountySystem\ExileClient_holdAction_bountyKing_showCondition.sqf'],
 	['ExileClient_system_bounty_network_bountyKingKilled', 'custom\BountySystem\ExileClient_system_bounty_network_bountyKingKilled.sqf'],
 	['ExileClient_system_bounty_network_bountyKingStart', 'custom\BountySystem\ExileClient_system_bounty_network_bountyKingStart.sqf'],
 	['ExileClient_system_bounty_network_bountyKingSurvived', 'custom\BountySystem\ExileClient_system_bounty_network_bountyKingSurvived.sqf'],

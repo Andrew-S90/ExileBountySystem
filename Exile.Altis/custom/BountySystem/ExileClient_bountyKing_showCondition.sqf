@@ -1,19 +1,17 @@
-private ["_object", "_activated", "_numPlayersByEntity"];
+private ["_object", "_activated", "_numPlayersByEntity", "_numPlayersBountyKing"];
+
 _object = _this;
 _activated = _object getVariable ["ExileBountyKingActivated", false];
 
-
-if (player getVariable ["ExileBountyKing", false]) exitWith {false};
 if (player getVariable ["ExileBountyKing", false]) exitWith {false};
 
 if (isNull _object) exitWith {false};
-if !(typeOf _object isEqualTo "PortableHelipadLight_01_red_F") exitWith {false};
+if !(typeOf _object isEqualTo "Land_PortableWeatherStation_01_olive_F") exitWith {false};
 if (_activated) exitWith {false};
 
 if(ExilePlayerInSafezone) exitWith {false};
 
 if(player distance _object > 5) exitWith {false};
-
 
 _numPlayersByEntity = {_x distance _object < 8} count allPlayers;
 _numPlayersBountyKing = 0;
