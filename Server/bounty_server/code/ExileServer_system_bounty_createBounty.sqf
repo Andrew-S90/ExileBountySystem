@@ -40,7 +40,7 @@ try
 			_markerName = createMarker [format["markername%1",_spawnPosition], _spawnPosition];
 			_markerName setMarkerType "b_inf";
 			_markerName setMarkerText "Bounty Mission";
-			_object = createVehicle ["PortableHelipadLight_01_blue_F", _spawnPosition, [], 0, "CAN_COLLIDE"]; 
+			_object = createVehicle ["Land_PortableWeatherStation_01_white_F", _spawnPosition, [], 0, "CAN_COLLIDE"]; //PortableHelipadLight_01_blue_F
 			_object setVariable ["ExileBountyMarker",_markerName,true];
 			ExileBountyBounties pushBack [_object,""];
 		}
