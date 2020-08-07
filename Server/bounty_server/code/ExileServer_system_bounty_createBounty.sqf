@@ -1,7 +1,7 @@
 /*
  * Bounty Server ExileServer_system_bounty_createBounty
  *
- * Selects a random town and then spawns a Bounty in a building.
+ * Selects a random town and then spawns a nearby Bounty
  *
  * Made by Andrew_S90
  */
@@ -31,30 +31,15 @@ try
 			
 			_spawnPosition = [_townPos, 1, _radius, 3, 0, 20, 0,[],_townPos] call BIS_fnc_findSafePos;
 			
-			/*_townBuildings = nearestTerrainObjects [_townPos, ["HOUSE"], _radius, false, true];
-		
-			_building = selectRandom _townBuildings;
-			if (isNull _building) throw false;
-			if (isObjectHidden _building) throw false;
-			if !(isClass(configFile >> "CfgBuildings" >> typeOf _building)) throw false;
-			if ((getPosATL _building) call ExileClient_util_world_isInTraderZone) throw false;
-			if ((getPosATL _building) call ExileClient_util_world_isInTerritory) throw false;
-			
-			_found = true;
-			_buildingConfig = configFile >> "CfgBuildings" >> typeOf _building;
-			_localPositions = getArray (_buildingConfig >> "positions");
-			_randomPosition = selectRandom _localPositions;
-			
-			_spawnPosition = ASLToATL (AGLToASL (_building modelToWorld _randomPosition));*/
 			if (_spawnPosition select 2 < 0.05) then
 			{
 				_spawnPosition set [2, 0.05];
 			};
 			_found = true;
-			diag_log format["ExileServer_system_bounty_createBounty Bounty Created at %1 pos %2",name _town,_spawnPosition];
+			diag_log format["BountySystem Bounty Created at %1 pos %2",name _town,_spawnPosition];
 			_markerName = createMarker [format["markername%1",_spawnPosition], _spawnPosition];
-			_markerName setMarkerType "hd_dot";
-			_markerName setMarkerColor "ColorBlue";
+			_markerName setMarkerType "b_inf";
+			_markerName setMarkerText "Bounty Mission";
 			_object = createVehicle ["PortableHelipadLight_01_blue_F", _spawnPosition, [], 0, "CAN_COLLIDE"]; 
 			_object setVariable ["ExileBountyMarker",_markerName,true];
 			ExileBountyBounties pushBack [_object,""];

@@ -11,8 +11,8 @@ ExileClientBountyFlip = false;
 ["SuccessTitleAndText", ["Bounty", format["Let the hunt begin! You have %1 minutes to take down %2", _bountyTime,  name _player]]] call ExileClient_gui_toaster_addTemplateToast;
 
 ExileClientBountyMarker = createMarkerLocal [format["markername%1",_player], getPosATL _player];
-ExileClientBountyMarker setMarkerTypeLocal "hd_dot";
-ExileClientBountyMarker setMarkerColorLocal "ColorBlue";
+ExileClientBountyMarker setMarkerTypeLocal "select";
+ExileClientBountyMarker setMarkerColorLocal "ColorRed";
 
 if !(ExileClientBountyWatch isEqualTo -1) then
 {

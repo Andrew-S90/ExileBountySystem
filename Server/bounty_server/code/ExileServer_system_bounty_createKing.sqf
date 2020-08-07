@@ -34,28 +34,12 @@ try
 			{
 				_spawnPosition pushBack 0;
 			};
-			
-			/*_townBuildings = nearestTerrainObjects [_townPos, ["HOUSE"], _radius, false, true];
-		
-			_building = selectRandom _townBuildings;
-			if (isNull _building) throw false;
-			if (isObjectHidden _building) throw false;
-			if !(isClass(configFile >> "CfgBuildings" >> typeOf _building)) throw false;
-			if ((getPosATL _building) call ExileClient_util_world_isInTraderZone) throw false;
-			if ((getPosATL _building) call ExileClient_util_world_isInTerritory) throw false;
-			
-			_found = true;
-			_buildingConfig = configFile >> "CfgBuildings" >> typeOf _building;
-			_localPositions = getArray (_buildingConfig >> "positions");
-			_randomPosition = selectRandom _localPositions;
-			
-			_spawnPosition = ASLToATL (AGLToASL (_building modelToWorld _randomPosition));*/
 
 			_found = true;
-			diag_log format["ExileServer_system_bounty_createKing BountyKing Created at %1 pos %2",name _town,_spawnPosition];
+			diag_log format["BountySystem BountyKing Created at %1 pos %2",name _town,_spawnPosition];
 			_markerName = createMarker [format["markername%1",_spawnPosition], _spawnPosition];
-			_markerName setMarkerType "ExileMissionBountyKingWhite";
-			_markerName setMarkerColor "ColorWhite";
+			_markerName setMarkerType "n_inf";
+			_markerName setMarkerText "Bounty King Mission";
 			_object = createVehicle ["PortableHelipadLight_01_red_F", _spawnPosition, [], 0, "CAN_COLLIDE"]; 
 			_object setVariable ["ExileKingBountyMarker",_markerName,true];
 			ExileBountyKings pushBack [_object,""];

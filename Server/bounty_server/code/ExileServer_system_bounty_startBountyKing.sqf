@@ -25,7 +25,8 @@ try
 	_object setVariable ["ExileBountyKingStarted", true, true];
 	
 	_marker = _object getVariable ["ExileKingBountyMarker",""];
-	_marker setMarkerType "ExileMissionBountyKingRed";
+	_marker setMarkerType "o_inf";
+	_marker setMarkerText "Bounty King";
 	
 	//[_sessionID, "toastRequest", ["SuccessTitleAndText", ["BountyKing", format["Let the hunt begin! Survive for %1 minutes.", _kingTime]]]] call ExileServer_system_network_send_to;
 	[_sessionID, "bountyKingStart", [_kingTime]] call ExileServer_system_network_send_to;
