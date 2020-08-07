@@ -11,7 +11,7 @@ ExileClientBountyFlip = false;
 
 if !(ExileClientBountyKingWatch isEqualTo -1) then
 {
-	ExileClientBountyKingWatch = [2, ExileClient_system_bounty_thread_bountyWatch, [_bountyMaxHeight], true] call ExileClient_system_thread_addtask;
+	ExileClientBountyKingWatch = [2, ExileClient_system_bounty_thread_bountyKingWatch, [_bountyMaxHeight], true] call ExileClient_system_thread_addtask;
 };
 
 _kingTime spawn

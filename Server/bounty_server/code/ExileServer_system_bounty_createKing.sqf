@@ -43,6 +43,11 @@ try
 			_object = createVehicle ["Land_PortableWeatherStation_01_olive_F", _spawnPosition, [], 0, "CAN_COLLIDE"]; //PortableHelipadLight_01_red_F
 			_object setVariable ["ExileKingBountyMarker",_markerName,true];
 			ExileBountyKings pushBack [_object,""];
+			
+			if (getNumber(configFile >> "BountySettings" >> "King" >> "broadcastNewMission") isEqualTo 1) then
+			{
+				["bountyBaguetteRequest", ["New Bounty King Mission Spotted!","BountyKing",false]] call ExileServer_system_network_send_broadcast;
+			};
 		}
 		catch 
 		{

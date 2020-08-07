@@ -9,11 +9,12 @@
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
  */
  
-private["_description", "_display", "_baguette", "_iconArea", "_icon", "_text", "_textArea", "_textAreaSize"];
+private["_description", "_display", "_baguette", "_iconArea", "_icon", "_text", "_textArea", "_textAreaSize", "_red"];
 disableSerialization;
 if !(ExileClientBaguetteAreaVisible) exitWith { false };
 _description = _this select 0;
 _type = _this select 1;
+_red = _this select 2;
 waitUntil {!ExileBaguetteIsVisible};
 ExileBaguetteIsVisible = true;
 _display = uiNamespace getVariable ["RscExileBaguetteArea", displayNull];
@@ -24,12 +25,26 @@ _iconArea ctrlCommit 0;
 if (_type isEqualTo "BountyKing") then 
 {
 	_icon = _baguette controlsGroupCtrl 5003;
-	_icon ctrlSetText "custom\BountySystem\bountyking_red.paa";
+	if(_red) then
+	{
+		_icon ctrlSetText "custom\BountySystem\bountyking_red.paa";
+	}
+	else
+	{
+		_icon ctrlSetText "custom\BountySystem\bountyking_white.paa";
+	};
 };
 if (_type isEqualTo "Bounty") then 
 {
 	_icon = _baguette controlsGroupCtrl 5003;
-	_icon ctrlSetText "custom\BountySystem\bounty_red.paa";
+	if(_red) then
+	{
+		_icon ctrlSetText "custom\BountySystem\bounty_red.paa";
+	}
+	else
+	{
+		_icon ctrlSetText "custom\BountySystem\bounty_white.paa";
+	};
 };
 _text = _baguette controlsGroupCtrl 5002;
 _text ctrlSetText _description;

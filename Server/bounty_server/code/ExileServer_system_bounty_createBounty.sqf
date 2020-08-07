@@ -43,6 +43,11 @@ try
 			_object = createVehicle ["Land_PortableWeatherStation_01_white_F", _spawnPosition, [], 0, "CAN_COLLIDE"]; //PortableHelipadLight_01_blue_F
 			_object setVariable ["ExileBountyMarker",_markerName,true];
 			ExileBountyBounties pushBack [_object,""];
+			
+			if (getNumber(configFile >> "BountySettings" >> "Bounty" >> "broadcastNewMission") isEqualTo 1) then
+			{
+				["bountyBaguetteRequest", ["New Bounty Mission Spotted!","Bounty",false]] call ExileServer_system_network_send_broadcast;
+			};
 		}
 		catch 
 		{

@@ -52,6 +52,8 @@ class BountySettings
 		
 		maxHeight = 500; //meterS
 		
+		broadcastNewMission = 1; //Broadcasts when a new Bounty King Mission is spawned on the map
+		
 		blacklist[] =
 		{
 			"I_Plane_Fighter_03_dynamicLoadout_F", // A-143 Buzzard (CAS)
@@ -87,6 +89,8 @@ class BountySettings
 		activateDelay = 10; //seconds headstart a target gets to move from the initial location
 		
 		maxHeight = 500; //meterS
+		
+		broadcastNewMission = 1; //Broadcasts when a new Bounty Mission is spawned on the map
 	};
 	
 	class Supply

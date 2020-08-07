@@ -49,6 +49,15 @@ class CfgNetworkMessages
 			"SCALAR"
 		};
 	};
+	
+	class surviveBountyKing
+	{
+		module="system_bounty";
+		parameters[]=
+		{
+			"BOOL"
+		};
+	};
 
 	class startBounty
 	{
@@ -105,7 +114,8 @@ class CfgNetworkMessages
 		parameters[]=
 		{
 			"STRING",
-			"STRING"
+			"STRING",
+			"BOOL"
 		};
 	};
 };	

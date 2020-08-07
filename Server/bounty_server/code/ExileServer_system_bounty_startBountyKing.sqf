@@ -32,7 +32,8 @@ try
 	[_sessionID, "bountyKingStart", [_kingTime]] call ExileServer_system_network_send_to;
 	//different response... starts client side timer
 	//server watch timer
-	["baguetteRequest", ["New Bounty King appeared!"]] call ExileServer_system_network_send_broadcast;
+	//["baguetteRequest", ["New Bounty King appeared!"]] call ExileServer_system_network_send_broadcast;
+	["bountyBaguetteRequest", ["New Bounty King appeared!","BountyKing",true]] call ExileServer_system_network_send_broadcast;
 	
 	if (ExileBountyWatcherKing isEqualTo -1) then
 	{

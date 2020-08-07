@@ -9,4 +9,4 @@
  * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
  */
  
-[_this select 0] spawn ExileClient_gui_baguette_show;
+_this spawn ExileClient_gui_bounty_baguette_show;

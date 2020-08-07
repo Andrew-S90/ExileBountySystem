@@ -1,13 +1,13 @@
 private ["_object", "_activated", "_numPlayersByEntity"];
 
-_object = _this;
+_object = _this select 0;
 _activated = _object getVariable ["ExileBountyActivated", false];
 
 try 
 {
 	if(isNull _object) then {throw "Object not found."};
 
-	if !(typeOf _object isEqualTo "PortableHelipadLight_01_blue_F") then {throw "Incorrect Object!"};
+	if !(typeOf _object isEqualTo "Land_PortableWeatherStation_01_white_F") then {throw "Incorrect Object!"};
 	if (_activated) then {throw "Bounty Mission already completed!"};
 	if(player distance _object > 5) then {throw "You are too far!"};
 	
