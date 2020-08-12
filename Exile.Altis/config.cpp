@@ -3494,7 +3494,7 @@ class CfgExileCustomCode
 	*/
 	
 	//ExileBountySystem Start
-	ExileClient_object_player_safezone_checkSafezone = "customcode\client\ExileClient_object_player_safezone_checkSafezone";
+	ExileClient_object_player_safezone_checkSafezone = "customcode\client\ExileClient_object_player_safezone_checkSafezone.sqf";
 	
 	ExileServer_util_getFragPerks = "customcode\server\ExileServer_util_getFragPerks.sqf";
 	ExileServer_object_player_event_onMpKilled = "customcode\server\ExileServer_object_player_event_onMpKilled.sqf";
