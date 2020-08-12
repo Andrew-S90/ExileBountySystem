@@ -31,10 +31,23 @@ try
 			
 			_spawnPosition = [_townPos, 1, _radius, 3, 0, 20, 0,[],_townPos] call BIS_fnc_findSafePos;
 			
-			if (_spawnPosition select 2 < 0.05) then
+			if ((count _spawnPosition) isEqualTo 2) then
 			{
-				_spawnPosition set [2, 0.05];
+				_spawnPosition pushBack 0;
 			};
+			
+			_isInTerritory = _spawnPosition call ExileClient_util_world_isInTerritory;
+			_isInTrader = _spawnPosition call ExileClient_util_world_isInTraderZone;
+			
+			if (_isInTerritory) then
+			{
+				throw "";
+			};
+			if (_isInTrader) then
+			{
+				throw "";
+			};
+			
 			_found = true;
 			diag_log format["BountySystem Bounty Created at %1 pos %2",name _town,_spawnPosition];
 			_markerName = createMarker [format["markername%1",_spawnPosition], _spawnPosition];

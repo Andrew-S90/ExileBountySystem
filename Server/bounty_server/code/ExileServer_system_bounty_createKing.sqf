@@ -30,9 +30,22 @@ try
 			_radius = 150;
 			
 			_spawnPosition = [_townPos, 1, _radius, 3, 0, 20, 0,[],_townPos] call BIS_fnc_findSafePos;
-			if((count _spawnPosition) isEqualTo 2) then
+			
+			if ((count _spawnPosition) isEqualTo 2) then
 			{
 				_spawnPosition pushBack 0;
+			};
+			
+			_isInTerritory = _spawnPosition call ExileClient_util_world_isInTerritory;
+			_isInTrader = _spawnPosition call ExileClient_util_world_isInTraderZone;
+			
+			if (_isInTerritory) then
+			{
+				throw "";
+			};
+			if (_isInTrader) then
+			{
+				throw "";
 			};
 
 			_found = true;
