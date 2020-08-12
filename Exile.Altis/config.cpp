@@ -3495,6 +3495,7 @@ class CfgExileCustomCode
 	
 	//bounties
 	ExileServer_util_getFragPerks = "customcode\server\ExileServer_util_getFragPerks.sqf";
+	ExileServer_object_player_event_onMpKilled = "customcode\server\ExileServer_object_player_event_onMpKilled.sqf";
 };
 class CfgExileEnvironment
 {

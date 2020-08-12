@@ -47,4 +47,8 @@ try
 catch
 {
 	[_sessionID, "toastRequest", ["ErrorTitleOnly", [_exception]]] call ExileServer_system_network_send_to;
+	_playerObject = _sessionID call ExileServer_system_session_getPlayerObject;
+	_playerObject setVariable ["ExileBountyKing", false, true];
+	_object setVariable ["ExileBountyKingActivated", false, true];
+	_object setVariable ["ExileBountyKingStarted", false, true];
 };
