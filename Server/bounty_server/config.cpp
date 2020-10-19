@@ -45,11 +45,9 @@ class BountySettings
 		
 		time = 1; //minutes
 		
-		respect = 10000; //if popbonus is on then payout becomes 10,000 respect * 50 (player pop) * 1 (bonus) = 500,000 respect to killer
+		respect = 10000; //payout becomes 10,000 respect * 50 (player pop) * 1 (bonus) = 500,000 respect to killer
 		
-		poptabs = 20000;
-		
-		populationBonus = 1; //1 = on, 0 = off
+		poptabs = 20000; //payout becomes 20,000 poptabs * 50 (player pop) * 1 (bonus) = 1,000,000 poptabs to killer
 		
 		bonus = 1; //1x per player.
 		
@@ -81,11 +79,9 @@ class BountySettings
 		
 		time = 1; //minutes
 		
-		respect = 5000; //if popbonus is on then payout becomes 10,000 respect * 50 (player pop) * 1 (bonus) = 500,000 respect to killer
+		respect = 5000; //payout becomes 5,000 respect * 50 (player pop) * 1 (bonus) = 250,000 respect to killer
 		
-		poptabs = 10000;
-		
-		populationBonus = 1; //1 = on, 0 = off
+		poptabs = 10000; //payout becomes 10,000 poptabs * 50 (player pop) * 1 (bonus) = 500,000 poptabs to killer
 		
 		bonus = 1; //1x per player.
 		
