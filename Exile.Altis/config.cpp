@@ -3499,7 +3499,6 @@ class CfgExileCustomCode
 	ExileServer_object_player_event_onMpKilled = "customcode\server\ExileServer_object_player_event_onMpKilled.sqf";
 	ExileServer_object_vehicle_event_onGetIn = "customcode\server\ExileServer_object_vehicle_event_onGetIn.sqf";
 	ExileServer_util_getFragPerks = "customcode\server\ExileServer_util_getFragPerks.sqf";
-
 	//ExileBountySystem End
 };
 class CfgExileEnvironment
