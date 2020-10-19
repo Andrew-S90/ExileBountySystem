@@ -2,10 +2,14 @@
 Bounty System for Exile Servers
 
 Customizable features allowing bounty missions on your server. 
+
 Mission type one is Bounty King where you are the target and your goal is to stay alive until the end of count down for a reward. If anyone kills you they get respect and a reward.
+
 Mission type two is Bounty Mission where you are given a target and must kill them. If they survive the timer then they get a reward. If they are killed by anyone else you get a reduced reward. If you die they get a reduced reward, if they kill you they get a bigger reward.
 
+Bounty King missions features a vehicle blocklist if you wish to not allow use of a certain type of vehicle when they are hunted.
 Team Kills for Bounty King earn no rewards, you can only do one mission per group and can't get your teammates as targets.
+Safezones, territories, map boundries and height limit are in place to stop running/abuse.
 Customize the bounty missions in bounty_server\config.cpp
 
 Showcase video: 
