@@ -1,4 +1,11 @@
-private ["_currentKings", "_currentBounties", "_headlessClients", "_humanPlayers", "_kingPoptabs", "_kingRespect", "_kingBonus", "_kingMaxHeight", "_endLoop", "_playerObject", "_marker", "_bountyKingEndTime", "_isInTerritory", "_isInTrader", "_traderTime", "_territoryTime", "_heightTime", "_sessionID", "_poptabReward", "_respectReward", "_playerRespect", "_playerMoney", "_result"];
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_currentKings", "_currentBounties", "_endLoop", "_playerObject", "_marker", "_result"];
 diag_log "Bounty Server Monitor Loop";
 
 _currentKings = ExileBountyKings;

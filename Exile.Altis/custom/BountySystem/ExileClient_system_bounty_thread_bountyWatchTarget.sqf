@@ -1,7 +1,14 @@
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_player", "_bountyMaxHeight", "_isInTerritory", "_isInTrader", "_traderTime", "_territoryTime", "_heightTime", "_distance", "_display", "_distanceBar"];
 
 _player = _this select 0;
 _bountyMaxHeight = _this select 1;
-
 
 if (player getVariable ["ExileBountyTargeted",false]) then
 {
@@ -10,13 +17,11 @@ if (player getVariable ["ExileBountyTargeted",false]) then
 	_traderTime = player getVariable ["ExileBountyTrader", 30];
 	_territoryTime = player getVariable ["ExileBountyTerritory", 30];
 	_heightTime = player getVariable ["ExileBountyHeight", 30];
-	
+
 	_distance = player distance2D _player;
-	
 	_display = uiNamespace getVariable [ "LowerBountyTimer", controlNull ];
-	
 	_distanceBar = _display displayCtrl 5305;
-	
+
 	if(_distance >= 2500) then
 	{
 		_distanceBar progressSetPosition 0.01; 
@@ -54,13 +59,11 @@ if (player getVariable ["ExileBountyTargeted",false]) then
 		{
 			if (_traderTime <= 0) then
 			{
-				//["ErrorTitleAndText", ["Bounty", "Bounty Failed! Rewards aren't given to safezone campers!"]] call ExileClient_gui_toaster_addTemplateToast;
 				player setVariable ["ExileBountyTrader", 30, true];
 				player setVariable ["ExileBountyTerritory", 30, true];
 				player setVariable ["ExileBountyHeight", 30, true];
-				//player setVariable ["ExileBounty", false, true];
 				["targetFailBounty", [0]] call ExileClient_system_network_send;
-				diag_log format["Bounty Monitor: %1 Failed BountyKing! - Too long in Trader!",(_x select 1)];
+				diag_log format["Bounty Monitor: %1 Failed Bounty Target! - Too long in Trader!",(_x select 1)];
 			}
 			else
 			{
@@ -74,13 +77,11 @@ if (player getVariable ["ExileBountyTargeted",false]) then
 		{
 			if (_territoryTime <= 0) then
 			{
-				//["ErrorTitleAndText", ["Bounty", "Bounty Failed! Rewards aren't given to territory campers!"]] call ExileClient_gui_toaster_addTemplateToast;
 				player setVariable ["ExileBountyTrader", 30, true];
 				player setVariable ["ExileBountyTerritory", 30, true];
 				player setVariable ["ExileBountyHeight", 30, true];
-				//player setVariable ["ExileBounty", false, true];
 				["targetFailBounty", [1]] call ExileClient_system_network_send;
-				diag_log format["Bounty Monitor: %1 Failed Bounty! - Too long in Territory",(_x select 1)];
+				diag_log format["Bounty Monitor: %1 Failed Bounty Target! - Too long in Territory",(_x select 1)];
 			}
 			else
 			{
@@ -93,13 +94,11 @@ if (player getVariable ["ExileBountyTargeted",false]) then
 	{
 		if (_heightTime <= 0) then
 		{
-			//["ErrorTitleAndText", ["Bounty", "Bounty Failed! Rewards aren't given to flyboys!"]] call ExileClient_gui_toaster_addTemplateToast;
 			player setVariable ["ExileBountyTrader", 30, true];
 			player setVariable ["ExileBountyTerritory", 30, true];
 			player setVariable ["ExileBountyHeight", 30, true];
-			//player setVariable ["ExileBounty", false, true];
 			["targetFailBounty", [2]] call ExileClient_system_network_send;
-			diag_log format["Bounty Monitor: %1 Failed Bounty! - Flying too high!",player];
+			diag_log format["Bounty Monitor: %1 Failed Bounty Target! - Flying too high!",player];
 		}
 		else
 		{

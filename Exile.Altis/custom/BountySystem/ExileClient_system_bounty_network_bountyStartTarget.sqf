@@ -1,4 +1,10 @@
-
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
 private ["_player", "_bountyTime", "_bountyMaxHeight"];
 
 _player = _this select 0;
@@ -11,14 +17,14 @@ ExileClientBountyFlip = false;
 
 systemchat format["Territories, Safezones and being above %1m will forfit your reward!",_bountyMaxHeight];
 
-if !(ExileClientBountyWatchTarget isEqualTo -1) then
+if (ExileClientBountyWatchTarget isEqualTo -1) then
 {
 	ExileClientBountyWatchTarget = [2, ExileClient_system_bounty_thread_bountyWatchTarget, [_player,_bountyMaxHeight], true] call ExileClient_system_thread_addtask;
 };
 
 _bountyTime spawn
 {
-	private ["_bountyTime", "_Display", "_timerText", "_display", "_timerIcon", "_timerTitle", "_timerTarget", "_player", "_timer", "_count", "_flip", "_early", "_result"];
+	private ["_bountyTime", "_Display", "_timerText", "_display", "_timerIcon", "_timerTitle", "_timerTarget", "_timer", "_count", "_flip", "_early", "_result"];
 	_bountyTime = _this;
 	disableSerialization;
 	(["LowerBountyTimerLayerArea"] call BIS_fnc_rscLayer) cutRsc ["LowerBountyTimer","PLAIN", 0, false];

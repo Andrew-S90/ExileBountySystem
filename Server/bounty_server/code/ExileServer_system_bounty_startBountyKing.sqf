@@ -1,4 +1,11 @@
-private ["_sessionID", "_object", "_playerObject", "_started", "_kingTime"];
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_sessionID", "_object", "_playerObject", "_started", "_kingTime", "_bountyMaxHeight", "_marker"];
 
 _sessionID = _this select 0;
 _object = _this select 1;
@@ -29,20 +36,15 @@ try
 	_marker setMarkerType "o_inf";
 	_marker setMarkerText "Bounty King";
 	
-	//[_sessionID, "toastRequest", ["SuccessTitleAndText", ["BountyKing", format["Let the hunt begin! Survive for %1 minutes.", _kingTime]]]] call ExileServer_system_network_send_to;
 	[_sessionID, "bountyKingStart", [_kingTime,_bountyMaxHeight]] call ExileServer_system_network_send_to;
 	//different response... starts client side timer
 	//server watch timer
-	//["baguetteRequest", ["New Bounty King appeared!"]] call ExileServer_system_network_send_broadcast;
 	["bountyBaguetteRequest", ["New Bounty King appeared!","BountyKing",true]] call ExileServer_system_network_send_broadcast;
 	
 	if (ExileBountyWatcherKing isEqualTo -1) then
 	{
 		ExileBountyWatcherKing = [3, ExileServer_system_bounty_monitorLoopKing, [], true]  call ExileServer_system_thread_addtask;
 	};
-	
-	//[ExileEscapePlayerStartThreadID] call ExileServer_system_thread_removeTask;
-	
 }
 catch
 {

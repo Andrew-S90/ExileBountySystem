@@ -1,15 +1,12 @@
-/**
- * ExileClient_gui_baguette_show
+ /*
  *
- * Exile Mod
- * www.exilemod.com
- * © 2015 Exile Mod Team
+ * Author: Andrew_S90
  *
- * This work is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. 
- * To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-nd/4.0/.
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
  */
  
-private["_description", "_display", "_baguette", "_iconArea", "_icon", "_text", "_textArea", "_textAreaSize", "_red"];
+private ["_description", "_type", "_red", "_display", "_baguette", "_iconArea", "_icon", "_text", "_textArea", "_textAreaSize"];
 disableSerialization;
 if !(ExileClientBaguetteAreaVisible) exitWith { false };
 _description = _this select 0;

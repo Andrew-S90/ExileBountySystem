@@ -1,4 +1,10 @@
-
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
 private ["_player", "_bountyTime", "_bountyMaxHeight"];
 
 
@@ -21,7 +27,7 @@ if (ExileClientBountyWatch isEqualTo -1) then
 
 [_bountyTime,_player] spawn
 {
-	private ["_bountyTime", "_Display", "_timerText", "_display", "_timerIcon", "_timerTitle", "_timerTarget", "_player", "_timer", "_count", "_flip", "_early", "_result"];
+	private ["_bountyTime", "_player", "_Display", "_timerText", "_display", "_timerIcon", "_timerTitle", "_timerTarget", "_timer", "_count", "_flip", "_early", "_result"];
 	_bountyTime = _this select 0;
 	_player = _this select 1;
 	disableSerialization;
@@ -31,7 +37,6 @@ if (ExileClientBountyWatch isEqualTo -1) then
 	_timerIcon = _display displayCtrl 4301;
 	_timerIcon ctrlsetText "custom\BountySystem\bounty_white.paa";
 	_timerTitle = _display displayCtrl 4302;
-	//_timerTitle ctrlsetText "Bounty";
 	_timerTitle ctrlSetStructuredText parseText "<t color='#ffffff'>BOUNTY</t>";
 	_timerTarget = _display displayCtrl 4303;
 	_timerTarget ctrlSetStructuredText parseText format["Eliminate <t color='#ff0000'>%1</t>",name _player];

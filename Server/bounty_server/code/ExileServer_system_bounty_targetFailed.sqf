@@ -1,5 +1,11 @@
-
-private ["_playerObject", "_headlessClients", "_humanPlayers", "_bountyPoptabs", "_bountyBonus", "_poptabReward", "_playerMoney", "_sessionID"];
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_playerObject", "_headlessClients", "_humanPlayers", "_bountyPoptabs", "_bountyBonus", "_bountyRespect", "_penalty", "_respectReward", "_poptabReward", "_playerMoney", "_oldPlayerRespect", "_newPlayerRespect", "_sessionID", "_perks"];
 
 _playerObject = _this;
 
@@ -31,7 +37,6 @@ _sessionID = _playerObject getVariable ["ExileSessionID", -1];
 [_sessionID, "toastRequest", ["SuccessTitleAndText", ["Bounty Target Hid!", format ["+%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/>", _poptabReward]]]] call ExileServer_system_network_send_to;
 _perks pushBack ["Bounty Hunt Hid!", _respectReward];
 [_playerObject, "showFragRequest", [_perks]] call ExileServer_system_network_send_to;
-//[_sessionID, "toastRequest", ["SuccessTitleAndText", ["Bounty Hunter Died!", format ["+%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/>", _respectReward]]]] call ExileServer_system_network_send_to;
 
 _playerObject call ExileServer_object_player_sendStatsUpdate;
 	

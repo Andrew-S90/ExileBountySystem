@@ -1,12 +1,12 @@
-/*
- * Bounty Server ExileServer_system_bounty_createBounty
+ /*
  *
- * Selects a random town and then spawns a nearby Bounty
+ * Author: Andrew_S90
  *
- * Made by Andrew_S90
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
  */
 
-private ["_found", "_count", "_center", "_towns", "_town", "_townPos", "_radius", "_townBuildings", "_building", "_buildingConfig", "_localPositions", "_randomPosition", "_spawnPosition", "_markerName", "_object"];
+private ["_found", "_count", "_center", "_towns", "_town", "_townPos", "_radius", "_spawnPosition", "_isInTerritory", "_isInTrader", "_markerName", "_object"];
 
 try 
 {

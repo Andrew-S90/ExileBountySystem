@@ -1,9 +1,17 @@
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
 private ["_object", "_activated", "_numPlayersByEntity", "_numPlayersBountyKing"];
 
 _object = _this;
 _activated = _object getVariable ["ExileBountyKingActivated", false];
 
 if (player getVariable ["ExileBountyKing", false]) exitWith {false};
+if (player getVariable ["ExileBounty", false]) exitWith {false};
 
 if (isNull _object) exitWith {false};
 if !(typeOf _object isEqualTo "Land_PortableWeatherStation_01_olive_F") exitWith {false};

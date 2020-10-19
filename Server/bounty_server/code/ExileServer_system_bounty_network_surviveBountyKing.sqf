@@ -1,4 +1,11 @@
-private ["_sessionID", "_parameters", "_playerObject", "_lootTableName", "_lootPosition", "_numberOfItemsToSpawn", "_lootWeaponHolderNetIDs", "_lootHolder", "_spawnedItemClassNames"];
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_sessionID", "_parameters", "_won", "_playerObject", "_isInTerritory", "_isInTrader", "_headlessClients", "_humanPlayers", "_kingPoptabs", "_kingRespect", "_kingBonus", "_kingMaxHeight", "_reward", "_poptabReward", "_respectReward", "_playerRespect", "_playerMoney", "_marker"];
 
 _sessionID = _this select 0;
 _parameters = _this select 1;

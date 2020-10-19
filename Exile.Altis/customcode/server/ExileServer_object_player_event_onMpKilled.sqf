@@ -35,6 +35,7 @@ _kingPoptabs = getNumber(configFile >> "BountySettings" >> "King" >> "poptabs");
 _kingBonus = getNumber(configFile >> "BountySettings" >> "King" >> "bonus");
 _bountyPoptabs = getNumber(configFile >> "BountySettings" >> "Bounty" >> "poptabs");
 _bountyBonus = getNumber(configFile >> "BountySettings" >> "Bounty" >> "bonus");
+_teamKilled = false;
 //ExileBountySystem End
 
 if !(isNull _killingPlayer) then 
@@ -99,6 +100,7 @@ switch (_killType) do
 		_respectLoss = round ((abs _oldKillerRespect) / 100 * (getNumber (configFile >> "CfgSettings" >> "Respect" >> "Percentages" >> "friendyFire")));
 		_newKillerRespect = _oldKillerRespect - _respectLoss;
 		_killSummary pushBack ["FRIENDLY FIRE", -1 * _respectLoss];
+		_teamKilled = true;
 	};
 	case 6:
 	{
@@ -184,14 +186,18 @@ if !(isNull _killingPlayer) then
 		forEach _bountyKings;
 		if !((getPlayerUID _killingPlayer) isEqualTo (getPlayerUID _victim)) then
 		{
-			_playerMoney = _killingPlayer getVariable ["ExileMoney", 0];
-			_playerMoney = floor (_playerMoney + _poptabReward);
+			if !(_teamKilled) then
+			{
+				_playerMoney = _killingPlayer getVariable ["ExileMoney", 0];
+				_playerMoney = floor (_playerMoney + _poptabReward);
+				
+				_killingPlayer setVariable ["ExileMoney", _playerMoney, true];
+				format["setPlayerMoney:%1:%2", _playerMoney, _killingPlayer getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;
+				
+				_sessionID = _killingPlayer getVariable ["ExileSessionID", -1];
+				[_sessionID, "toastRequest", ["SuccessTitleAndText", ["Bounty King Killed!", format ["+%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/>", _poptabReward]]]] call ExileServer_system_network_send_to;
+			};
 			
-			_killingPlayer setVariable ["ExileMoney", _playerMoney, true];
-			format["setPlayerMoney:%1:%2", _playerMoney, _killingPlayer getVariable ["ExileDatabaseID", 0]] call ExileServer_system_database_query_fireAndForget;
-			
-			_sessionID = _killingPlayer getVariable ["ExileSessionID", -1];
-			[_sessionID, "toastRequest", ["SuccessTitleAndText", ["Bounty King Killed!", format ["+%1<img image='\exile_assets\texture\ui\poptab_inline_ca.paa' size='24'/>", _poptabReward]]]] call ExileServer_system_network_send_to;
 		};
 		_killerStatsNeedUpdate = true;
 	};

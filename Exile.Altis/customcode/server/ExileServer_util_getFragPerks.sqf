@@ -16,12 +16,15 @@ _killingPlayer = _this select 2;
 _perks = [];
 if (_victim getVariable ["ExileBountyKing", false]) then
 {
-	_headlessClients = entities "HeadlessClient_F";
-	_humanPlayers = count (allPlayers - _headlessClients);
-	_kingRespect = getNumber(configFile >> "BountySettings" >> "King" >> "respect");
-	_kingBonus = getNumber(configFile >> "BountySettings" >> "King" >> "bonus");
-	_respectReward = _humanPlayers * _kingRespect * _kingBonus;
-	_perks pushBack ["Bounty King Slain", _respectReward];
+	if !((group _victim) isEqualTo (group _killingPlayer)) then
+	{
+		_headlessClients = entities "HeadlessClient_F";
+		_humanPlayers = count (allPlayers - _headlessClients);
+		_kingRespect = getNumber(configFile >> "BountySettings" >> "King" >> "respect");
+		_kingBonus = getNumber(configFile >> "BountySettings" >> "King" >> "bonus");
+		_respectReward = _humanPlayers * _kingRespect * _kingBonus;
+		_perks pushBack ["Bounty King Slain", _respectReward];
+	};
 };
 if (_victim getVariable ["ExileBountyHunter", ""] isEqualTo (getPlayerUID _killingPlayer)) then //if hunter kills target 
 {

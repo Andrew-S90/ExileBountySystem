@@ -1,4 +1,11 @@
-private ["_sessionID", "_object", "_playerObject", "_started", "_bountyTime"];
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_sessionID", "_object", "_playerObject", "_started", "_bountyMaxHeight", "_bountyTime", "_headlessClients", "_humanPlayersCount", "_player", "_found", "_count", "_humanPlayers", "_sessionIDTarget"];
 
 _sessionID = _this select 0;
 _object = _this select 1;
@@ -44,7 +51,9 @@ try
 				
 				if (_player call ExileClient_util_world_isInTraderZone) throw false;
 				
-				if (_player in units _playerObject) throw false;
+				if (_player in units _playerObject) throw false; //check if party member
+				
+				if (_player setVariable ["ExileBountyTargeted", false]) throw false; //check if already hunted
 				
 				_object setVariable ["ExileBountyTarget", (getPlayerUID _player), true];
 				_player setVariable ["ExileBountyHunter", (getPlayerUID _playerObject)];
@@ -74,19 +83,13 @@ try
 		_sessionIDTarget = _player getVariable ["ExileSessionID", -1];
 		//find target and set the hunt
 		_object setVariable ["ExileBountyEndTime",(time + (_bountyTime * 60)),true];
-		//[_sessionID, "toastRequest", ["SuccessTitleAndText", ["BountyKing", format["Let the hunt begin! Survive for %1 minutes.", _kingTime]]]] call ExileServer_system_network_send_to;
+		
 		[_sessionID, "bountyStart", [_player,_bountyTime,_bountyMaxHeight]] call ExileServer_system_network_send_to;
 		[_sessionIDTarget, "bountyStartTarget", [_playerObject,_bountyTime,_bountyMaxHeight]] call ExileServer_system_network_send_to;
-		//different response... starts client side timer
-		//server watch timer
-		//["baguetteRequest", ["New Bounty King appeared!"]] call ExileServer_system_network_send_broadcast;
-		
 		if (ExileBountyWatcher isEqualTo -1) then
 		{
 			ExileBountyWatcher = [3, ExileServer_system_bounty_monitorLoop, [], true]  call ExileServer_system_thread_addtask;
 		};
-		
-		//[ExileEscapePlayerStartThreadID] call ExileServer_system_thread_removeTask;
 	};
 }
 catch

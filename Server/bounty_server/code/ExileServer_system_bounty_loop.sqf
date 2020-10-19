@@ -1,4 +1,11 @@
-private ["_kingActive", "_kingAmount"];
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
+private ["_kingActive", "_kingAmount", "_bountyActive", "_bountyAmount"];
 diag_log "Bounty Server System Loop";
 
 _kingActive = (getNumber(configFile >> "BountySettings" >> "King" >> "enabled") isEqualTo 1);

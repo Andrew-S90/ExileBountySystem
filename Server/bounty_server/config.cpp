@@ -1,3 +1,10 @@
+ /*
+ *
+ * Author: Andrew_S90
+ *
+ * This work is protected by Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). 
+ *
+ */
 class CfgPatches
 {
 	class bounty_server
@@ -82,7 +89,7 @@ class BountySettings
 		
 		bonus = 1; //1x per player.
 		
-		targetDied = 0.25; //if the hunter dies by an enemy - WIP
+		targetDied = 0.25; //if the hunter or target dies by a random player or suicide the hunter/target gets 25% of the reward
 		
 		amount = 5; //how many can be on map + active at the same time
 		
@@ -91,15 +98,5 @@ class BountySettings
 		maxHeight = 500; //meterS
 		
 		broadcastNewMission = 1; //Broadcasts when a new Bounty Mission is spawned on the map
-	};
-	
-	class Supply
-	{
-		
-	};
-	
-	class Search
-	{
-		
 	};
 };
