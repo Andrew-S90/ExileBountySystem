@@ -89,7 +89,9 @@ class BountySettings
 		
 		bonus = 1; //1x per player.
 		
-		targetDied = 0.25; //if the hunter or target dies by a random player or suicide the hunter/target gets 25% of the reward
+		targetDied = 0.25; //if the target dies by a random player or suicide the hunter gets 25% of the reward
+		
+		hunterDied = 0.85; //if the hunter dies by a random player or suicide the target gets 85% of the reward
 		
 		amount = 5; //how many can be on map + active at the same time
 		

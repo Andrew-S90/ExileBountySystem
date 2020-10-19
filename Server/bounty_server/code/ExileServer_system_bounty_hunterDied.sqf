@@ -15,7 +15,7 @@ _humanPlayers = count (allPlayers - _headlessClients);
 _bountyPoptabs = getNumber(configFile >> "BountySettings" >> "Bounty" >> "poptabs");
 _bountyBonus = getNumber(configFile >> "BountySettings" >> "Bounty" >> "bonus");
 _bountyRespect = getNumber(configFile >> "BountySettings" >> "Bounty" >> "respect"); 
-_penalty = getNumber(configFile >> "BountySettings" >> "Bounty" >> "targetDied");
+_penalty = getNumber(configFile >> "BountySettings" >> "Bounty" >> "hunterDied");
 
 _respectReward = _humanPlayers * _bountyRespect * _bountyBonus * _penalty;
 
