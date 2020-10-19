@@ -12,7 +12,7 @@ Team Kills for Bounty King earn no rewards, you can only do one mission per grou
 Safezones, territories, map boundries and height limit are in place to stop running/abuse.
 Customize the bounty missions in bounty_server\config.cpp
 
-Showcase video: 
+Showcase video: https://www.youtube.com/watch?v=Ki6m_W3upgw
 
 This was developed on a test server with EXTDB2, no infistar and no battleye.
 
